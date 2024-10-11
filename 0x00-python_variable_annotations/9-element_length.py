@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 """
-Module to compute the length of each element in a list.
+Let's duck type an iterable object.
 
-This module provides the `element_length` function, which takes a list
-as input and returns a list of tuples. Each tuple contains an element
-from the input list and its corresponding length.
+This module provides a function to compute the length of each element
+in any iterable containing sequence objects, such as lists or tuples.
 """
-from typing import List, Tuple, Any
+
+from typing import Iterable, Sequence, List, Tuple
 
 
-def element_length(lst: List[Any]) -> List[Tuple[Any, int]]:
-    """Returns a list of tuples containing each element and its length.
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    """Return a list of tuples with each element and its length.
 
     Args:
-        lst (List[Any]): A list containing elements of any type.
+        lst (Iterable[Sequence]): An iterable containing sequence objects
+        (like lists, tuples, etc.).
 
     Returns:
-        List[Tuple[Any, int]]: A list of tuples, where each tuple contains
-        an element from the input list and its length.
+        List[Tuple[Sequence, int]]: A list of tuples, where each tuple contains
+        an element from the input iterable and its length.
     """
     return [(i, len(i)) for i in lst]
