@@ -7,6 +7,7 @@ import unittest
 from parameterized import parameterized
 from utils import access_nested_map
 
+
 class TestAccessNestedMap(unittest.TestCase):
     """
     Test case for the access_nested_map function.
@@ -35,6 +36,7 @@ class TestAccessNestedMap(unittest.TestCase):
             access_nested_map(nested_map, path)
         # Check if the exception message is as expected
         self.assertEqual(str(cm.exception), f"KeyError: '{path[-1]}'")
+
 
 if __name__ == "__main__":
     unittest.main()
